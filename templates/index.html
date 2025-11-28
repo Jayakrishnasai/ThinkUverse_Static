@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@300;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <header>
+        <nav>
+            <div class="logo">ThinkUverse</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#data">Cosmic Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="content">
+                <h1 class="glitch" data-text="ThinkUverse">ThinkUverse</h1>
+                <p class="subtitle">A Universe of Thinking</p>
+                <div class="dynamic-quote">
+                    <blockquote>"{{ quote }}"</blockquote>
+                </div>
+                <a href="#explore" class="btn-explore">Explore the Verse</a>
+            </div>
+            <div class="visuals">
+                <div class="orb"></div>
+                <div class="orb-reflection"></div>
+            </div>
+        </section>
+
+        <!-- Explore Section -->
+        <section id="explore" class="features">
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/think_concept.png') }}" alt="Think" class="feature-img">
+                <h2>Think</h2>
+                <p>Ideas, Imagination, Intelligence. The spark that starts it all.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{{ url_for('static', filename='images/universe_concept.png') }}" alt="Verse"
+                    class="feature-img">
+                <h2>Verse</h2>
+                <p>A large world or space. The canvas for your thoughts.</p>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data" class="data-section">
+            <h1 style="text-align: center; font-family: 'Orbitron', sans-serif; margin-bottom: 30px; color: #00d2ff;">
+                Cosmic Data</h1>
+            <div class="table-container">
+                {{ table_html | safe }}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; {{ now.year }} ThinkUverse. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
