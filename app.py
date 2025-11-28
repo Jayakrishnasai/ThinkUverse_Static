@@ -21,7 +21,10 @@ def inject_now():
 @app.route('/')
 def index():
     # Quote for the hero section
-    quote = random.choice(QUOTES)
+    if QUOTES:
+        quote = random.choice(QUOTES)
+    else:
+        quote = "Be the change you wish to see in the universe."
     
     # Data for the data section
     data = {
